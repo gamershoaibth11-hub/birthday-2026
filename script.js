@@ -628,8 +628,12 @@ function showSilence() {
     const responseEl = document.getElementById('voiceResponse');
     responseEl.innerHTML = `
         <div class="silence-message">
-            <p>Even in silence, ami tomar pasha achhi.</p>
-            <p>Shobshomoy. 🤍</p>
+            <p>Ami emnie onek beshi kotha boli,</p>
+            <p>ektu naile chup kore thaklam nahoy.</p>
+            <br>
+            <p>Ami chup kore thakleo tomar sathei thakte chai.</p>
+            <p><strong>Ajibon.</strong></p>
+            <p><strong>Shobshomoy.</strong> 🤍</p>
         </div>
     `;
     responseEl.style.display = 'block';
