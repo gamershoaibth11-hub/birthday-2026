@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <section id="landing" class="section active">
+        <div class="container">
+            <div class="cake-image">
+                <img src="cake.png" alt="Birthday Cake" class="floating-cake">
+            </div>
+            <h1 class="glitch">🎂 Happy Birthday, Onti ❤️</h1>
+            <p class="subtitle">Ajker din ta shudhu tomar.</p>
+            <p class="subtitle-small">Ami physically pasha na thakte parleo, ei choto duniya ta baniyechi shudhu tomar jonno.</p>
+            <button class="btn-primary" onclick="startJourney()">Start the surprise ✨</button>
+        </div>
+        <div class="confetti-container"></div>
+    </section>
+
+    <!-- Chithi Section -->
+    <section id="chithi-section" class="section">
+        <div class="container">
+            <h2 class="section-title">📨 Tomar Jonno Kichu Chithi</h2>
+            <p class="section-subtitle">Unlock them throughout the day — each batch opens at specific times ⏰</p>
+            <p class="batch-info">
+                🌙 Batch 1 (4 chithis): 12:00 AM<br>
+                ☀️ Batch 2 (4 chithis): 9:00 AM<br>
+                🌤️ Batch 3 (4 chithis): 1:00 PM<br>
+                🌅 Batch 4 (4 chithis): 5:00 PM<br>
+                🌃 Batch 5 (4 chithis): 9:00 PM<br>
+                ⭐ Batch 6 (4 chithis): 11:59 PM (FINAL)
+            </p>
+            
+            <div class="chithi-grid" id="chithiGrid"></div>
+            
+            <!-- Secret Unlock Button -->
+            <div class="secret-unlock-section">
+                <p class="secret-hint">🔐 Shob chithi eksathe unlock korte chao?</p>
+                <input type="text" id="chithiSecretCode" class="secret-input" placeholder="Enter secret code...">
+                <button class="btn-secondary" onclick="unlockAllChithis()">🔓 Unlock All</button>
+                <p class="secret-result" id="secretResult"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Shuffle -->
+    <section id="memory-section" class="section">
+        <div class="container">
+            <h2 class="section-title">📸 Amader Memories</h2>
+            <p class="section-subtitle">Amader random kichu memories — click to enlarge 💕</p>
+            
+            <div class="memory-grid-4" id="memoryGrid"></div>
+            
+            <div class="memory-buttons">
+                <button class="btn-secondary" onclick="shuffleMemories()">
+                    <span class="shuffle-icon">🔀</span>
+                    <span class="shuffle-text">Aro memories dekhao</span>
+                </button>
+                <button class="btn-gallery" id="galleryBtn" onclick="showFullGallery()" disabled>
+                    🔒 Full Gallery (10 shuffles remaining)
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-image" id="modalImage">
+        <video class="modal-video" id="modalVideo" controls></video>
+    </div>
+
+    <!-- Voice & Silence -->
+    <section id="voice-section" class="section">
+        <div class="container">
+            <h2 class="section-title">🎧 khali dekhba naki kisu shunba?</h2>
+            <p class="section-subtitle">Potor potor shunba, gaan shunba, naki ektu shanti te thakba?</p>
+            <div class="voice-buttons">
+                <button class="btn-voice" onclick="playWish()">💌 Birthday Wish</button>
+                <button class="btn-voice" onclick="playSong()">🎵 Tomar Jonno Gaan</button>
+                <button class="btn-silence" onclick="showSilence()">🤍 Silence e thaki</button>
+            </div>
+            <div class="voice-response" id="voiceResponse"></div>
+        </div>
+    </section>
+
+    <!-- Final Message (Combined Dua + Night Surprise) -->
+    <section id="final-section" class="section">
+        <div class="container">
+            <div class="final-card">
+                <h2 class="section-title">💝 Final Kichu Kotha</h2>
+                <div class="final-content">
+                    <p class="final-message">
+                        Ajke tomar birthday. Ajke ami tomar jonno ekta special dua korsi.<br><br>
+                        
+                        Tumi shobshomoy safe thakba, khushi thakba, ar valobasay ghera thakba.<br>
+                        Tumi onek kichu deserve koro in sha allah tomar shob eccha puron hobe<br><br>
+                        
+                        Ekdin shb badha par kore ami tomar kasei thakte parbo dure thakte hobena<br>
+                        Shedin porjonto, ei website ta tomar kase feel koranor ekta way.<br><br>
+                        
+                        <span class="final-highlight">Love you, Onti ❤️</span><br><br>
+                        
+                        <span class="final-sign">— Shoaib</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ending Credits -->
+    <section id="credits" class="section">
+        <div class="container">
+            <div class="credits-card">
+                <h2 class="section-title">🎬 Ending Credits</h2>
+                <p class="credits-text">
+                    <strong>Starring:</strong> Onti (Birthday Girl) 🎂<br><br>
+                    <strong>Made with love by:</strong> Shoaib ❤️<br><br>
+                    <strong>Special thanks:</strong><br>
+                    • Shob shomoy pashe thaka<br>
+                    • Shob shomoy support korar jonno<br>
+                    • Amar vul gula maf kora<br>
+                    • Amar jonno eto kichu kora<br>
+                    • Late-night calls & long voice messages<br>
+                    • Infinite patience<br><br>
+                    <strong>Location:</strong> Miles apart but hearts together 💕<br><br>
+                    <em>Aro onek kichu korte chaisilam ekhane, korte parlam na.</em><br>
+                    <em>Kintu ei website ta shobshomoy ekhane thakbe, jokhon amar kotha mone porbe. 🌟</em>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Miss Me Button -->
+    <button class="floating-miss-btn" onclick="showMissMessage()">💌</button>
+
+    <!-- Modals -->
+    <div class="modal" id="chithiModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('chithiModal')">&times;</span>
+            <h3 id="chithiTitle"></h3>
+            <p id="chithiContent"></p>
+        </div>
+    </div>
+
+    <div class="modal" id="thingModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('thingModal')">&times;</span>
+            <p id="thingContent"></p>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
